@@ -1,0 +1,20 @@
+let
+    -- Functions for setting MIDI pitch or sample number
+    nChord p = p + n (cP "chord")
+    nArp p = p + n (cP "arp")
+    nBass p = p * n (cP "bass")
+    -- Functions for setting sample pitch
+    upChord p = p + up (cP "chord")
+    upArp p = p + up (cP "arp")
+    upBass p = p |* up (cP "bass")
+
+d1  $ nArp
+    $ s "supervibe(<6 8>,12)"
+
+d2  $ nBass
+    $ s "~ ~ supergong*4"
+    # legato 0.75
+
+d3  $ s "bd*3"
+
+hush

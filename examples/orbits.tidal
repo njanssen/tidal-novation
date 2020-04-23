@@ -1,0 +1,12 @@
+d1  $ s "bd(<3 5>,8)"
+
+d2  $ s "sn"
+
+d3  $ sometimes (hurry 2)
+    $ struct "1 0 1 0 1 1 1 0"
+    $ s "casio"
+    # n "0 <1 3>"
+
+hush
+
+

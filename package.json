@@ -1,0 +1,13 @@
+{
+  "name": "tidal-launchkey",
+  "version": "1.0.0",
+  "description": "Some glue for using Novation Launchkey Mini as a controller for TidalCycles",
+  "main": "index.js",
+  "repository": "git@github.com:njanssen/tidal-launchkey.git",
+  "author": "Niels Janssen <niels@vliegwerk.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@vliegwerk/novation": "file:../../npm/node-novation",
+    "@vliegwerk/tidal": "^1.3.0"
+  }
+}
