@@ -15,11 +15,11 @@ tidal.on('ready', () => {
 })
 
 tidal.on('message', (message) => {
-	const { orbit, x = orbit, y = 1 } = message
+	const { orbit, clr = Launchpad.COLOR.YELLOW } = message
 
-	controller.ledOn(x, y, Launchpad.COLOR.YELLOW)
+	controller.ledOn(orbit, 1, clr)
 	setTimeout(function () {
-		controller.ledOff(x, y)
+		controller.ledOff(orbit, 1)
 	}, LED_SUSTAIN)
 })
 
@@ -33,13 +33,12 @@ controller.on('connected', () => {
 	controller.dawMode()
 	controller.dawClear()
 	controller.layoutSession()
-	controller.ledSession(Launchpad.COLOR.YELLOW)
 
+	controller.ledSession(Launchpad.COLOR.YELLOW)
 	controller.ledCtrlOn(Launchpad.CONTROLS.LOGO, Launchpad.COLOR.YELLOW)
-	controller.ledCtrlOn(
-		Launchpad.CONTROLS.STOP_MUTE_SOLO,
-		Launchpad.COLOR.WHITE_LOW
-	)
+
+	// Orbit scrolling
+	controller.ledCtrlOn(Launchpad.CONTROLS.RIGHT, Launchpad.COLOR.WHITE_LOW)
 
 	controller.on('NoteOn', (message) => {
 		const note = message.note
